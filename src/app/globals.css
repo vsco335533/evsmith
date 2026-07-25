@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #081426;
+  --bg-secondary: #0d1e38;
+  --bg-card: #0f2442;
+  --bg-card-alt: #11284a;
+  --electric-green: #38d430;
+  --electric-green-glow: rgba(56, 212, 48, 0.4);
+  --electric-cyan: #00f0ff;
+  --text-primary: #ffffff;
+  --text-muted: #94a3b8;
+  --text-dark: #081426;
+  --glass-bg: rgba(13, 30, 56, 0.85);
+  --glass-border: rgba(56, 212, 48, 0.3);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --grid-line: rgba(56, 212, 48, 0.07);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--electric-green);
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: var(--electric-green);
+  box-shadow: 0 16px 40px -10px var(--electric-green-glow);
+}
+
+/* Dynamic Theme Adaptive Classes */
+.theme-card {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+}
+
+.theme-card-alt {
+  background-color: var(--bg-card-alt);
+  color: var(--text-primary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+/* Text Gradients */
+.text-gradient-green {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--electric-green) 50%, var(--electric-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-electric {
+  background: linear-gradient(90deg, var(--electric-green) 0%, var(--electric-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Electric Glows */
+.glow-green {
+  box-shadow: 0 0 25px var(--electric-green-glow);
+}
+
+.glow-green-lg {
+  box-shadow: 0 0 50px var(--electric-green-glow);
+}
+
+/* Background Cyber Grid Pattern */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Pulsating Dot */
+@keyframes pulse-green {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 212, 48, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(56, 212, 48, 0);
+  }
+}
+.pulse-green-badge {
+  animation: pulse-green 2s infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Particle Sparks */
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.2);
+  }
+}
+.animate-spark {
+  animation: spark 3s infinite ease-out;
+}
+
+/* 3D Box Perspective Utilities */
+.perspective-1000 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ==========================================================================
+   BRIGHT MODE LIGHT THEME ABSOLUTE OVERRIDES
+   ========================================================================== */
+
+html.light-theme,
+html.light-theme body,
+html.light-theme main,
+html.light-theme section,
+html.light-theme footer,
+html.light-theme .bg-cyber-grid,
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] main,
+html[data-theme="light"] section,
+html[data-theme="light"] footer,
+html[data-theme="light"] .bg-cyber-grid,
+body.light-theme,
+body.light-theme section,
+body.light-theme main,
+body.light-theme footer,
+main.light-theme,
+main.light-theme section,
+main.light-theme footer {
+  background-color: #f8fafc !important;
+  background-image: linear-gradient(to right, rgba(21, 128, 61, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(21, 128, 61, 0.08) 1px, transparent 1px) !important;
+  color: #0f172a !important;
+}
+
+html.light-theme .glass-panel,
+body.light-theme .glass-panel,
+main.light-theme .glass-panel,
+[data-theme="light"] .glass-panel {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light-theme h1,
+html.light-theme h2,
+html.light-theme h3,
+html.light-theme h4,
+html.light-theme h5,
+html.light-theme h6,
+html.light-theme p,
+html.light-theme span,
+html.light-theme div,
+html.light-theme strong,
+html.light-theme label,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] p,
+[data-theme="light"] span,
+[data-theme="light"] div,
+[data-theme="light"] strong,
+[data-theme="light"] label {
+  color: #0f172a !important;
+}
+
+html.light-theme .text-slate-400,
+html.light-theme .text-slate-300,
+html.light-theme .text-slate-200,
+html.light-theme .text-white,
+[data-theme="light"] .text-slate-400,
+[data-theme="light"] .text-slate-300,
+[data-theme="light"] .text-slate-200,
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+html.light-theme footer,
+body.light-theme footer,
+[data-theme="light"] footer {
+  background-color: #ffffff !important;
+  border-top-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light-theme footer h4,
+body.light-theme footer h4,
+[data-theme="light"] footer h4 {
+  color: #0f172a !important;
+}
+
+html.light-theme footer p,
+html.light-theme footer span,
+html.light-theme footer a,
+body.light-theme footer p,
+body.light-theme footer span,
+body.light-theme footer a,
+[data-theme="light"] footer p,
+[data-theme="light"] footer span,
+[data-theme="light"] footer a {
+  color: #334155 !important;
+}
+
+html.light-theme footer a:hover,
+body.light-theme footer a:hover,
+[data-theme="light"] footer a:hover {
+  color: #15803d !important;
+}
+
+html.light-theme .text-gradient-electric,
+[data-theme="light"] .text-gradient-electric {
+  background: linear-gradient(90deg, #15803d 0%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
