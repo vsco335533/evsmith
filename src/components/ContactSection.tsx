@@ -26,7 +26,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
             Get in Touch & <span className="text-gradient-electric">Collect Your Bike</span>
           </h2>
           <p className="text-base sm:text-xl text-[var(--text-muted)] font-semibold">
-            Visit our Gajularamaram Kailash Hills hub in Hyderabad or give us a call for instant reservation.
+            Visit our Kailash Hills hub in Hyderabad or give us a call for instant reservation.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
                   <div>
                     <span className="text-xs text-[var(--text-muted)] font-bold uppercase tracking-wider">Hub Address</span>
                     <h3 className="text-xl font-black text-[var(--text-primary)] font-heading mt-0.5">
-                      Gajularamaram, Kailash Hills
+                      Kailash Hills, Hyderabad
                     </h3>
                     <p className="text-sm text-[var(--text-muted)] mt-1 font-medium">Hyderabad, Telangana - 500055</p>
                   </div>
@@ -111,7 +111,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
               </a>
 
               <a
-                href="https://maps.google.com/?q=Gajularamaram+Kailash+Hills+Hyderabad"
+                href="https://maps.google.com/?q=Kailash+Hills+Hyderabad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3.5 rounded-xl glass-panel border border-[var(--card-border)] hover:border-[#38d430] text-[var(--text-primary)] hover:text-[#38d430] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5"
@@ -145,7 +145,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
               <span className="text-xs font-bold text-[var(--text-primary)] flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#38d430]" /> Interactive Map Marker
               </span>
-              <span className="text-xs text-[#38d430] font-black">Gajularamaram, Kailash Hills</span>
+              <span className="text-xs text-[#38d430] font-black">Kailash Hills, Hyderabad</span>
             </div>
 
             <div className="w-full h-full min-h-[380px] relative">

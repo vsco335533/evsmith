@@ -200,7 +200,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
             <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-panel border border-[var(--card-border)] text-[var(--text-primary)] font-extrabold">
                 <MapPin className="w-4 h-4 text-[#38d430]" />
-                Gajularamaram, Kailash Hills
+                Kailash Hills, Hyderabad
               </span>
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-panel border border-[var(--card-border)] text-[var(--text-primary)] font-extrabold">
                 <CheckCircle2 className="w-4 h-4 text-[#38d430]" />

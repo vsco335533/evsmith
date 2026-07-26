@@ -23,7 +23,7 @@ export default function FAQAccordion() {
     },
     {
       q: 'What happens if the battery becomes low while riding?',
-      a: 'The BGauss Oowah EX comes with a single removable battery pack that can be charged at any regular 15A home or shop socket using the included fast charger. Additionally, we provide instant battery swap support at our Gajularamaram hub.',
+      a: 'The BGauss Oowah EX comes with a single removable battery pack that can be charged at any regular 15A home or shop socket using the included fast charger. Additionally, we provide instant battery swap support at our Kailash Hills, Hyderabad hub.',
     },
     {
       q: 'Can I extend my rental duration easily?',

@@ -34,7 +34,7 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
     {
       number: '04',
       title: 'Collect Bike',
-      desc: 'Pick up your BGauss Oowah EX at Gajularamaram, Kailash Hills.',
+      desc: 'Pick up your BGauss Oowah EX at Kailash Hills, Hyderabad.',
       icon: Key,
       color: 'border-amber-400 text-amber-400',
     },

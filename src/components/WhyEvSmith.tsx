@@ -45,7 +45,7 @@ export default function WhyEvSmith() {
       icon: MapPin,
       title: '📍 Local Support',
       subtitle: 'Instant Assistance',
-      desc: 'Dedicated local hub at Gajularamaram, Kailash Hills. On-call phone support & fast battery swap assistance when needed.',
+      desc: 'Dedicated local hub at Kailash Hills, Hyderabad. On-call phone support & fast battery swap assistance when needed.',
       color: 'from-emerald-400 to-[#38d430]',
     },
   ];

@@ -64,7 +64,7 @@ export default function FeaturedBike({ onOpenBooking, onOpenLightbox }: Featured
                 Ready for Pickup
               </span>
               <span className="text-xs font-bold text-[var(--text-muted)]">
-                Gajularamaram, Hyderabad
+                Hyderabad
               </span>
             </div>
 

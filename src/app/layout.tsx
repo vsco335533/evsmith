@@ -26,12 +26,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'EV Smith | Premium Electric Bike Rentals in Hyderabad | BGauss Oowah EX',
   description:
-    'Affordable Premium Electric Scooter Rentals in Hyderabad. BGauss Oowah EX with 100 KM Range, 65 km/h Top Speed, 4H Fast Charging. Plans start at ₹2000/week. Gajularamaram, Kailash Hills, Hyderabad.',
+    'Affordable Premium Electric Scooter Rentals in Hyderabad. BGauss Oowah EX with 100 KM Range, 65 km/h Top Speed, 4H Fast Charging. Plans start at ₹2000/week. Kailash Hills, Hyderabad.',
   keywords: [
     'EV Smith',
     'EV Rental Hyderabad',
     'Electric bike rental Hyderabad',
-    'Electric scooter rental Gajularamaram',
+    'Electric scooter rental Kailash Hills Hyderabad',
     'BGauss Oowah EX rental',
     'Rent EV bike Hyderabad',
     'Delivery partner scooter rental',
@@ -101,7 +101,7 @@ export default function RootLayout({
     priceRange: '₹2000 - ₹7500',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Gajularamaram, Kailash Hills',
+      streetAddress: 'Kailash Hills',
       addressLocality: 'Hyderabad',
       addressRegion: 'Telangana',
       postalCode: '500055',

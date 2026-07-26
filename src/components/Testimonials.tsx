@@ -22,7 +22,7 @@ export default function Testimonials() {
     },
     {
       name: 'Arun',
-      role: 'Delivery Executive, Gajularamaram',
+      role: 'Delivery Executive, Hyderabad',
       rating: 5,
       comment: 'Battery backup is excellent. Picked up the bike in 10 minutes flat. Zero maintenance stress!',
       badge: 'Verified Delivery Partner',
@@ -31,7 +31,7 @@ export default function Testimonials() {
       name: 'Suresh V.',
       role: 'College Student, Pragathi Nagar',
       rating: 5,
-      comment: 'Super fast deposit refund when I returned the bike! Staff at Gajularamaram Kailash Hills hub are very helpful.',
+      comment: 'Super fast deposit refund when I returned the bike! Staff at Kailash Hills hub are very helpful.',
       badge: 'Verified Student',
     },
   ];

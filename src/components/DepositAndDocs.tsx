@@ -94,7 +94,7 @@ export default function DepositAndDocs({ onOpenBooking }: DepositProps) {
                 Required <span className="text-gradient-electric">Documents Checklist</span>
               </h2>
               <p className="text-base sm:text-lg text-[var(--text-muted)] mt-2 font-semibold">
-                Bring these simple documents for quick verification during bike collection at Gajularamaram.
+                Bring these simple documents for quick verification during bike collection at Kailash Hills, Hyderabad.
               </p>
             </div>
 

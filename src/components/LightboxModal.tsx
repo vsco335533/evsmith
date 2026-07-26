@@ -53,7 +53,7 @@ export default function LightboxModal({ isOpen, imageSrc, onClose }: LightboxPro
 
             <div className="mt-4 text-center flex items-center gap-2 text-xs text-slate-400">
               <ShieldCheck className="w-4 h-4 text-[#38d430]" />
-              <span>Full original vehicle inspection grade • Available now at Gajularamaram Kailash Hills hub</span>
+              <span>Full original vehicle inspection grade • Available now at Kailash Hills, Hyderabad</span>
             </div>
           </motion.div>
         </div>

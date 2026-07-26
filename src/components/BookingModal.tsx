@@ -41,7 +41,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
       // fallback
     }
 
-    const message = `*NEW EV SMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* BGauss Oowah EX (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Kailash Hills, Hyderabad`;
+    const message = `*NEW EV SMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* BGauss Oowah EX (2 Bikes Available)%0A*Pickup Hub:* Kailash Hills, Hyderabad`;
 
     setTimeout(() => {
       window.open(`https://wa.me/918275753239?text=${message}`, '_blank');
@@ -91,7 +91,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   Rent BGauss Oowah EX
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
-                  2 Bikes Available at Gajularamaram, Kailash Hills, Hyderabad
+                  2 Bikes Available at Kailash Hills, Hyderabad
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">

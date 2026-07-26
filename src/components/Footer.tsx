@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm text-[var(--text-muted)] font-medium">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#38d430] shrink-0 mt-0.5" />
-                <span className="text-[var(--text-muted)]">Gajularamaram, Kailash Hills, Hyderabad, Telangana - 500055</span>
+                <span className="text-[var(--text-muted)]">Kailash Hills, Hyderabad, Telangana - 500055</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#38d430] shrink-0" />
