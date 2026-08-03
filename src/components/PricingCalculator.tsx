@@ -18,9 +18,9 @@ export default function PricingCalculator({ onOpenBooking }: PricingProps) {
   // EV Smith Rental Rate calculation
   let dailyRentalRate = 285; // default weekly rate per day
   if (days >= 30) {
-    dailyRentalRate = 250; // Monthly
+    dailyRentalRate = 260; // Monthly
   } else if (days >= 15) {
-    dailyRentalRate = 253; // 15 Days
+    dailyRentalRate = 267; // 15 Days
   }
   const evSmithTotal = days * dailyRentalRate;
 
@@ -38,7 +38,6 @@ export default function PricingCalculator({ onOpenBooking }: PricingProps) {
       features: [
         'BGauss Oowah EX Scooter',
         '100 KM Battery Range per charge',
-        'Free ISI Safety Helmet',
         '100% Free Servicing & Repairs',
         '₹1,500 Refundable Deposit',
       ],
@@ -46,14 +45,13 @@ export default function PricingCalculator({ onOpenBooking }: PricingProps) {
     {
       id: '15days',
       name: '15 Days Plan',
-      price: '₹3,800',
-      perDay: '₹253 / day',
+      price: '₹4,000',
+      perDay: '₹267 / day',
       duration: '15 Days',
       popular: false,
       features: [
         'BGauss Oowah EX Scooter',
         '100 KM Battery Range per charge',
-        'Free ISI Safety Helmet',
         '100% Free Servicing & Repairs',
         '₹1,500 Refundable Deposit',
         'Save ₹500 vs Petrol',
@@ -62,15 +60,14 @@ export default function PricingCalculator({ onOpenBooking }: PricingProps) {
     {
       id: 'monthly',
       name: 'Monthly Plan',
-      price: '₹7,500',
-      perDay: '₹250 / day',
+      price: '₹7,800',
+      perDay: '₹260 / day',
       duration: '30 Days',
       popular: true,
       badge: 'MOST POPULAR & SAVINGS',
       features: [
         'BGauss Oowah EX Scooter',
         '100 KM Battery Range per charge',
-        'Free ISI Safety Helmet',
         '100% Free Maintenance & Battery Swap',
         '₹1,500 Refundable Deposit',
         'Save over ₹3,000/month vs Petrol',
@@ -96,7 +93,7 @@ export default function PricingCalculator({ onOpenBooking }: PricingProps) {
             Simple & Affordable <span className="text-gradient-electric">Rental Plans</span>
           </h2>
           <p className="text-base sm:text-xl text-[var(--text-muted)] font-semibold">
-            Zero hidden charges. Every plan includes free maintenance, battery support, and an ISI safety helmet.
+            Zero hidden charges. Every plan includes free maintenance and battery support.
           </p>
         </div>
 

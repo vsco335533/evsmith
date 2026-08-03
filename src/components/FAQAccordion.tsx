@@ -17,10 +17,7 @@ export default function FAQAccordion() {
       q: 'How much is the security deposit and when is it refunded?',
       a: 'The security deposit is ₹1,500 only. It is 100% refundable immediately upon returning the electric bike in good condition, via UPI bank transfer or cash.',
     },
-    {
-      q: 'Is a helmet included with the electric bike rental?',
-      a: 'Yes! A high-quality ISI-certified safety helmet is provided completely FREE with every weekly, 15-day, or monthly rental package.',
-    },
+
     {
       q: 'What happens if the battery becomes low while riding?',
       a: 'The BGauss Oowah EX comes with a single removable battery pack that can be charged at any regular 15A home or shop socket using the included fast charger. Additionally, we provide instant battery swap support at our Kailash Hills, Hyderabad hub.',
@@ -63,7 +60,7 @@ export default function FAQAccordion() {
           <Search className="w-4 h-4 theme-text-muted absolute left-4 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Search FAQs (e.g. deposit, documents, helmet)..."
+            placeholder="Search FAQs (e.g. deposit, documents, battery)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-11 pr-4 py-3.5 rounded-2xl glass-panel border border-slate-700/60 focus:border-[#38d430] text-sm theme-text-primary placeholder:text-slate-500 outline-none transition-colors"

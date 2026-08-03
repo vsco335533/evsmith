@@ -34,7 +34,7 @@ const AVAILABLE_BIKES: BikeItem[] = [
     range: '100 km',
     charge: '4.0 Hours',
     weeklyPrice: '₹2,000',
-    monthlyPrice: '₹7,500',
+    monthlyPrice: '₹7,800',
     badge: 'Popular Delivery Pick',
     badgeBg: 'bg-[#38d430]',
     badgeText: 'text-[#081426]',
@@ -48,7 +48,7 @@ const AVAILABLE_BIKES: BikeItem[] = [
     range: '100 km',
     charge: '4.0 Hours',
     weeklyPrice: '₹2,000',
-    monthlyPrice: '₹7,500',
+    monthlyPrice: '₹7,800',
     badge: 'Executive Commute',
     badgeBg: 'bg-[#00f0ff]',
     badgeText: 'text-[#081426]',
@@ -82,6 +82,9 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
     bikes: 0,
   });
 
+  // Sparkles state to avoid hydration mismatch
+  const [sparkles, setSparkles] = useState<{width: number, height: number, left: number, top: number, delay: number, duration: number}[]>([]);
+
   // Auto-flip Box Transition Effect every 4 seconds
   useEffect(() => {
     if (autoFlipPaused) return;
@@ -92,6 +95,18 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
 
     return () => clearInterval(timer);
   }, [autoFlipPaused]);
+
+  // Generate sparkles on client-side only
+  useEffect(() => {
+    setSparkles([...Array(12)].map((_, i) => ({
+      width: Math.random() * 4 + 2,
+      height: Math.random() * 4 + 2,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: i * 0.4,
+      duration: 2.5 + Math.random() * 2,
+    })));
+  }, []);
 
   // Counter animation on mount
   useEffect(() => {
@@ -136,17 +151,17 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
 
       {/* Floating Sparkles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(12)].map((_, i) => (
+        {sparkles.map((sparkle, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-[#38d430] opacity-35 animate-spark"
             style={{
-              width: `${Math.random() * 4 + 2}px`,
-              height: `${Math.random() * 4 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.4}s`,
-              animationDuration: `${2.5 + Math.random() * 2}s`,
+              width: `${sparkle.width}px`,
+              height: `${sparkle.height}px`,
+              left: `${sparkle.left}%`,
+              top: `${sparkle.top}%`,
+              animationDelay: `${sparkle.delay}s`,
+              animationDuration: `${sparkle.duration}s`,
             }}
           />
         ))}
@@ -239,7 +254,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
             <div className="pt-2 flex items-center gap-3 text-xs sm:text-sm">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#38d430]/15 border border-[#38d430]/35 text-[#38d430] font-extrabold">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#38d430] animate-pulse"></span>
-                <span>2 Bikes Available Now for Immediate Pickup</span>
+                <span> Available Now for Immediate Pickup</span>
               </div>
             </div>
 
@@ -304,6 +319,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                     src={currentBike.image}
                     alt={currentBike.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-contain drop-shadow-[0_16px_20px_rgba(0,0,0,0.6)]"
                     priority
                   />

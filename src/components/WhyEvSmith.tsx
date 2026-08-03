@@ -24,7 +24,7 @@ export default function WhyEvSmith() {
       icon: CircleDollarSign,
       title: '💰 Affordable',
       subtitle: 'Lowest Rental Rates',
-      desc: 'Unbeatable weekly (₹2000) and monthly (₹7500) rental plans designed for maximum financial savings vs expensive petrol.',
+      desc: 'Unbeatable weekly (₹2000) and monthly (₹7800) rental plans designed for maximum financial savings vs expensive petrol.',
       color: 'from-amber-400 to-[#38d430]',
     },
     {

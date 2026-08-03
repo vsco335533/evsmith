@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 /* ─── Inline SVG brand icons ──────────────────────────────────────────────── */
 
@@ -141,37 +142,42 @@ interface Partner {
   name: string;
   tagline: string;
   accent: string;
-  Icon: () => React.ReactElement;
+  image?: string;
+  Icon?: () => React.ReactElement;
 }
 
 const PARTNERS: Partner[] = [
-  { name: 'Swiggy',        tagline: 'Food Delivery',       accent: '#FC8019', Icon: SwiggyIcon },
-  { name: 'Zomato',        tagline: 'Food Delivery',       accent: '#E23744', Icon: ZomatoIcon },
-  { name: 'Rapido',        tagline: 'Bike Taxi',           accent: '#FFCF44', Icon: RapidoIcon },
-  { name: 'Blinkit',       tagline: 'Instant Delivery',    accent: '#F8CB46', Icon: BlinkitIcon },
-  { name: 'Zepto',         tagline: '10-Min Delivery',     accent: '#7B2FF2', Icon: ZeptoIcon },
-  { name: 'Dunzo',         tagline: 'Quick Commerce',      accent: '#00D290', Icon: DunzoIcon },
-  { name: 'BigBasket',     tagline: 'Grocery Delivery',    accent: '#84C225', Icon: BigBasketIcon },
-  { name: 'Amazon Flex',   tagline: 'Package Delivery',    accent: '#FF9900', Icon: AmazonFlexIcon },
-  { name: 'Flipkart',      tagline: 'E-Commerce',          accent: '#2874F0', Icon: FlipkartIcon },
-  { name: 'Porter',        tagline: 'Logistics',           accent: '#5DADE2', Icon: PorterIcon },
-  { name: 'Shadowfax',     tagline: 'Last Mile Delivery',  accent: '#FF6B35', Icon: ShadowfaxIcon },
-  { name: 'Ecom Express',  tagline: 'Courier Delivery',    accent: '#0072CE', Icon: EcomExpressIcon },
+  { name: 'Swiggy',        tagline: 'Food Delivery',       accent: '#FC8019', image: '/instamart.png', Icon: SwiggyIcon },
+  { name: 'Zomato',        tagline: 'Food Delivery',       accent: '#E23744', image: '/zomato.png', Icon: ZomatoIcon },
+  { name: 'Rapido',        tagline: 'Bike Taxi',           accent: '#FFCF44', image: '/rapido.png', Icon: RapidoIcon },
+  { name: 'Blinkit',       tagline: 'Instant Delivery',    accent: '#F8CB46', image: '/blinkit.png', Icon: BlinkitIcon },
+  { name: 'Zepto',         tagline: '10-Min Delivery',     accent: '#7B2FF2', image: '/zepto.png', Icon: ZeptoIcon },
+  { name: 'Dunzo',         tagline: 'Quick Commerce',      accent: '#00D290', image: '/dunzo.png', Icon: DunzoIcon },
+  { name: 'BigBasket',     tagline: 'Grocery Delivery',    accent: '#84C225', image: '/bigbasket.png', Icon: BigBasketIcon },
+  { name: 'Amazon Flex',   tagline: 'Package Delivery',    accent: '#FF9900', image: '/amazon.png', Icon: AmazonFlexIcon },
+  { name: 'Flipkart',      tagline: 'E-Commerce',          accent: '#2874F0', image: '/flipcart.png', Icon: FlipkartIcon },
+  { name: 'Porter',        tagline: 'Logistics',           accent: '#5DADE2', image: '/porter.png', Icon: PorterIcon },
+  { name: 'Shadowfax',     tagline: 'Last Mile Delivery',  accent: '#FF6B35', image: '/shadow_fox.png', Icon: ShadowfaxIcon },
+  { name: 'Ecom Express',  tagline: 'Courier Delivery',    accent: '#0072CE', image: '/ecom_express.png', Icon: EcomExpressIcon },
 ];
 
 const ROW1 = [...PARTNERS, ...PARTNERS];
 const ROW2 = [...[...PARTNERS].reverse(), ...[...PARTNERS].reverse()];
 
 function PartnerCard({ partner }: { partner: Partner }) {
-  const { Icon } = partner;
+  const { Icon, image } = partner;
   return (
     <div className="flex-shrink-0 w-[220px] sm:w-[260px] glass-panel rounded-2xl border border-[var(--card-border)] p-4 sm:p-5 flex items-center gap-4 transition-all duration-300 group cursor-default hover:border-[#38d430]/50">
       {/* App icon tile */}
       <div
-        className="w-14 h-14 rounded-2xl shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110"
+        className="w-14 h-14 rounded-2xl shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 relative bg-white"
         style={{ boxShadow: `0 6px 18px -4px ${partner.accent}66` }}
       >
-        <Icon />
+        {image ? (
+          <Image src={image} alt={partner.name} fill className="object-cover" sizes="56px" />
+        ) : (
+          Icon && <Icon />
+        )}
       </div>
 
       <div className="min-w-0">

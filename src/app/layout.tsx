@@ -98,7 +98,7 @@ export default function RootLayout({
     '@id': 'https://evsmith.in',
     url: 'https://evsmith.in',
     telephone: '+918275753239',
-    priceRange: '₹2000 - ₹7500',
+    priceRange: '₹2000 - ₹7800',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kailash Hills',
@@ -144,7 +144,7 @@ export default function RootLayout({
       '@type': 'AggregateOffer',
       priceCurrency: 'INR',
       lowPrice: '2000',
-      highPrice: '7500',
+      highPrice: '7800',
       offerCount: '2',
       availability: 'https://schema.org/InStock',
     },

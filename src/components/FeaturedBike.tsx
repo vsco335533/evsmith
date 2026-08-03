@@ -209,7 +209,7 @@ export default function FeaturedBike({ onOpenBooking, onOpenLightbox }: Featured
               <div className="glass-panel p-8 rounded-3xl border border-[var(--card-border)] space-y-4">
                 <h4 className="text-xl font-black text-[var(--text-primary)] font-heading">Engineered for City Roads</h4>
                 <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed font-medium">
-                  Featuring hydraulic shock absorbers, durable tubeless tires, spacious boot storage for helmet, and extra wide legroom for long delivery shifts or daily commutes.
+                  Featuring hydraulic shock absorbers, durable tubeless tires, spacious boot storage, and extra wide legroom for long delivery shifts or daily commutes.
                 </p>
                 <div className="flex flex-col gap-2.5 pt-2 text-xs sm:text-sm text-[var(--text-primary)] font-semibold">
                   <span className="flex items-center gap-2">
@@ -218,9 +218,7 @@ export default function FeaturedBike({ onOpenBooking, onOpenLightbox }: Featured
                   <span className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-[#38d430] shrink-0" /> Powerful LED Headlight for Night Rides
                   </span>
-                  <span className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#38d430] shrink-0" /> Helmet Included with Every Rental
-                  </span>
+
                 </div>
               </div>
             )}

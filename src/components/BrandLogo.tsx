@@ -12,9 +12,9 @@ interface BrandLogoProps {
 
 export default function BrandLogo({ className = '', size = 'md', showSubtitle = true }: BrandLogoProps) {
   const iconSizes = {
-    sm: 'w-9 h-9 sm:w-10 sm:h-10',
-    md: 'w-11 h-11 sm:w-12 sm:h-12',
-    lg: 'w-14 h-14 sm:w-16 sm:h-16',
+    sm: 'w-11 h-11 sm:w-12 sm:h-12',
+    md: 'w-13 h-13 sm:w-14 sm:h-14',
+    lg: 'w-16 h-16 sm:w-18 sm:h-18',
   };
 
   const textSizes = {
@@ -25,17 +25,21 @@ export default function BrandLogo({ className = '', size = 'md', showSubtitle = 
 
   return (
     <div className={`flex items-center gap-3 group shrink-0 ${className}`}>
-      {/* High-Contrast Badge Container so logo is 100% visible on ANY background */}
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`relative ${iconSizes[size]} rounded-2xl bg-white p-1.5 flex items-center justify-center shadow-lg border-2 border-[#38d430] group-hover:shadow-[0_0_25px_rgba(56,212,48,0.7)] transition-all shrink-0`}
+        className={`relative ${iconSizes[size]} flex items-center justify-center transition-all shrink-0 rounded-2xl overflow-hidden`}
+        style={{
+          background: 'radial-gradient(circle at 55% 45%, rgba(56,212,48,0.12) 0%, rgba(0,240,255,0.05) 70%, transparent 100%)',
+          boxShadow: '0 0 16px 3px rgba(56,212,48,0.30), inset 0 0 6px rgba(56,212,48,0.10)',
+          border: '1.5px solid rgba(56,212,48,0.40)',
+        }}
       >
         <Image
-          src="/assets/logo_original_cropped.png"
+          src="/assets/logo_original.png"
           alt="EV Smith Logo"
-          width={64}
-          height={64}
+          width={72}
+          height={72}
           className="object-contain w-full h-full"
           priority
         />
@@ -49,7 +53,7 @@ export default function BrandLogo({ className = '', size = 'md', showSubtitle = 
         </div>
         {showSubtitle && (
           <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[var(--text-muted)] font-bold whitespace-nowrap hidden sm:block">
-            Ride Electric. Ride Smart.
+            Earn With Electric
           </span>
         )}
       </div>

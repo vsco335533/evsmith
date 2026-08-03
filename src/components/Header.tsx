@@ -112,7 +112,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38d430] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#38d430]"></span>
             </span>
-            <span className="text-xs font-black text-[var(--text-primary)] whitespace-nowrap">2 Bikes Ready in Hyderabad</span>
+            {/* <span className="text-xs font-black text-[var(--text-primary)] whitespace-nowrap">2 Bikes Ready in Hyderabad</span> */}
           </div>
 
           {/* Desktop Nav Links (Clean Spacing, No Overlap!) */}
@@ -191,7 +191,6 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           >
             <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#38d430]/15 border border-[#38d430]/35 text-xs font-bold text-[#38d430]">
               <span className="h-2 w-2 rounded-full bg-[#38d430] animate-pulse"></span>
-              2 Bikes Available for Instant Pickup in Hyderabad
             </div>
 
             <div className="flex flex-col space-y-3 pt-2">

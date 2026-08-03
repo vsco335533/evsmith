@@ -21,8 +21,8 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
 
   const plans = [
     { id: 'weekly', name: 'Weekly Plan (₹2000)', price: '₹2000' },
-    { id: '15days', name: '15 Days Plan (₹3800)', price: '₹3800' },
-    { id: 'monthly', name: 'Monthly Plan (₹7500)', price: '₹7500' },
+    { id: '15days', name: '15 Days Plan (₹4000)', price: '₹4000' },
+    { id: 'monthly', name: 'Monthly Plan (₹7800)', price: '₹7800' },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {

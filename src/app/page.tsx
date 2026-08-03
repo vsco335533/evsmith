@@ -9,11 +9,8 @@ import WhyEvSmith from '@/components/WhyEvSmith';
 import FeaturedBike from '@/components/FeaturedBike';
 import PricingCalculator from '@/components/PricingCalculator';
 import DepositAndDocs from '@/components/DepositAndDocs';
-import WhyRentVsBuy from '@/components/WhyRentVsBuy';
-import BatteryTech from '@/components/BatteryTech';
 import BookingProcess from '@/components/BookingProcess';
 import Testimonials from '@/components/Testimonials';
-import FAQAccordion from '@/components/FAQAccordion';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
@@ -63,20 +60,11 @@ export default function Home() {
       {/* Security Deposit & Required Documents Checklist */}
       <DepositAndDocs onOpenBooking={() => handleOpenBooking('monthly')} />
 
-      {/* Why Rent Instead of Buy Comparison */}
-      <WhyRentVsBuy />
-
-      {/* Battery Technology Section */}
-      <BatteryTech />
-
       {/* 5-Step Timeline Booking Process */}
       <BookingProcess onOpenBooking={() => handleOpenBooking('weekly')} />
 
       {/* Verified Customer Reviews */}
       <Testimonials />
-
-      {/* FAQ Accordion */}
-      <FAQAccordion />
 
       {/* Contact Section & Google Maps Embed */}
       <ContactSection onOpenBooking={() => handleOpenBooking('monthly')} />

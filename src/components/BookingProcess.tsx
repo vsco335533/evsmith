@@ -13,7 +13,7 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
     {
       number: '01',
       title: 'Choose Plan',
-      desc: 'Select Weekly (₹2000), 15 Days (₹3800), or Monthly (₹7500) plan.',
+      desc: 'Select Weekly (₹2000), 15 Days (₹4000), or Monthly (₹7800) plan.',
       icon: CalendarCheck,
       color: 'border-[#38d430] text-[#38d430]',
     },
