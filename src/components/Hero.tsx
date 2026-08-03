@@ -18,11 +18,13 @@ interface BikeItem {
   range: string;
   charge: string;
   weeklyPrice: string;
+  fifteenDayPrice?: string;
   monthlyPrice: string;
   badge: string;
   badgeBg: string;
   badgeText: string;
   image: string;
+  availability?: string;
 }
 
 const AVAILABLE_BIKES: BikeItem[] = [
@@ -67,6 +69,21 @@ const AVAILABLE_BIKES: BikeItem[] = [
     badgeBg: 'bg-emerald-500',
     badgeText: 'text-white',
     image: '/assets/scooter_mint_transparent.png',
+  },
+  {
+    id: 'varcas-crony',
+    name: 'Varcas Crony',
+    variant: 'High Mileage Red Edition',
+    speed: '55 km/h',
+    range: '100 km',
+    charge: '4.0 Hours',
+    weeklyPrice: '₹1,800',
+    fifteenDayPrice: '₹3,600',
+    monthlyPrice: '₹7,000',
+    badge: 'Red — Available Now',
+    badgeBg: 'bg-red-600',
+    badgeText: 'text-white',
+    image: '/assets/varcas_crony_final.png',
   },
 ];
 
@@ -236,7 +253,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                 className="px-8 py-4 rounded-2xl bg-[#38d430] hover:bg-[#42e83a] text-[#081426] text-base font-black shadow-xl flex items-center justify-center gap-3 transition-all glow-green cursor-pointer"
               >
                 <Zap className="w-5 h-5 fill-current text-[#081426]" />
-                <span>Rent Now — ₹2000/wk</span>
+                <span>Rent Now — ₹1800/wk</span>
               </motion.button>
 
               <motion.a
@@ -312,9 +329,10 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                 {/* Static High-Res Bike Image */}
                 <div
                   onClick={() => onOpenLightbox(currentBike.image)}
-                  className="relative h-56 sm:h-64 w-full my-1 flex items-center justify-center cursor-pointer group"
+                  className="relative h-64 sm:h-72 w-full my-1 flex items-center justify-center cursor-pointer group rounded-2xl overflow-hidden"
+                  style={{ backgroundColor: '#0a1a2e' }}
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,212,48,0.2)_0%,_transparent_70%)] rounded-full blur-xl pointer-events-none" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,212,48,0.15)_0%,_transparent_70%)] pointer-events-none" />
                   <Image
                     src={currentBike.image}
                     alt={currentBike.name}
@@ -354,7 +372,12 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                     <div className="flex items-baseline gap-1">
                       <span className="text-xl sm:text-2xl font-black text-[#38d430]">{currentBike.weeklyPrice}</span>
                       <span className="text-xs font-bold text-[var(--text-muted)]">/week</span>
-                      <span className="text-xs text-[var(--text-muted)] font-medium ml-1 hidden sm:inline">({currentBike.monthlyPrice}/mo)</span>
+                      {currentBike.fifteenDayPrice && (
+                        <span className="text-xs text-[var(--text-muted)] font-medium ml-1 hidden sm:inline">· {currentBike.fifteenDayPrice}/15d · {currentBike.monthlyPrice}/mo</span>
+                      )}
+                      {!currentBike.fifteenDayPrice && (
+                        <span className="text-xs text-[var(--text-muted)] font-medium ml-1 hidden sm:inline">({currentBike.monthlyPrice}/mo)</span>
+                      )}
                     </div>
                   </div>
 
