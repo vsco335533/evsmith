@@ -8,8 +8,8 @@ export default function WhyRentVsBuy() {
   const comparisonData = [
     {
       feature: 'Upfront Downpayment',
-      buying: '₹15,000 - ₹30,000 High Downpayment',
-      renting: '₹0 Downpayment (Only ₹1500 Refundable Deposit)',
+      buying: 'High Downpayment Required',
+      renting: 'Zero Downpayment (Only Refundable Deposit)',
     },
     {
       feature: 'Monthly Financial Liability',
@@ -28,7 +28,7 @@ export default function WhyRentVsBuy() {
     },
     {
       feature: 'Battery Aging & Replacement',
-      buying: '₹35,000+ battery replacement after 2 years',
+      buying: 'Expensive battery replacement after 2 years',
       renting: 'Zero Battery Risk (We replace free)',
     },
     {

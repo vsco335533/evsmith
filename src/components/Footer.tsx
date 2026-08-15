@@ -21,7 +21,7 @@ export default function Footer() {
             </a>
 
             <p className="text-sm text-[var(--text-muted)] max-w-sm leading-relaxed font-medium pt-2">
-              Hyderabad’s premier electric scooter rental platform. Ride high-performance BGauss Oowah EX with 100 KM range, 65 km/h top speed, zero petrol costs, and 100% refundable deposit.
+              Hyderabad’s premier electric scooter rental platform. Ride high-performance electric scooters with 100 KM range, 65 km/h top speed, zero petrol costs, and 100% refundable deposit.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-[#38d430] font-black pt-1">
@@ -34,9 +34,8 @@ export default function Footer() {
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-sm font-black text-[var(--text-primary)] uppercase tracking-wider font-heading">Quick Links</h4>
             <ul className="space-y-2.5 text-sm font-medium">
-              <li><a href="#bike" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">BGauss Oowah EX Specs</a></li>
+              <li><a href="#bike" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Electric Scooter Specs</a></li>
               <li><a href="#why-us" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Why EV Smith</a></li>
-              <li><a href="#pricing" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Rental Pricing Plans</a></li>
               <li><a href="#documents" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Required Documents</a></li>
               <li><a href="#process" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">5-Step Booking Process</a></li>
               <li><a href="#faq" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Frequently Asked Questions</a></li>
@@ -49,7 +48,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm text-[var(--text-muted)] font-medium">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#38d430] shrink-0 mt-0.5" />
-                <span className="text-[var(--text-muted)]">Kailash Hills, Hyderabad, Telangana - 500055</span>
+                <span className="text-[var(--text-muted)]">Gajularamaram, Hyderabad, Telangana - 500055</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#38d430] shrink-0" />

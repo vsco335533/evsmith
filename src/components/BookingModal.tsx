@@ -15,14 +15,15 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
   const [plan, setPlan] = useState(selectedPlanId);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [preferredEvType, setPreferredEvType] = useState('Swappable Vehicle (Swapping Station)');
   const [docType, setDocType] = useState('Aadhaar');
   const [pickupDate, setPickupDate] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const plans = [
-    { id: 'weekly', name: 'Weekly Plan (₹2000)', price: '₹2000' },
-    { id: '15days', name: '15 Days Plan (₹4000)', price: '₹4000' },
-    { id: 'monthly', name: 'Monthly Plan (₹7800)', price: '₹7800' },
+    { id: 'weekly', name: 'Weekly Plan', price: '' },
+    { id: '15days', name: '15 Days Plan', price: '' },
+    { id: 'monthly', name: 'Monthly Plan', price: '' },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,7 +42,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
       // fallback
     }
 
-    const message = `*NEW EV SMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* BGauss Oowah EX (2 Bikes Available)%0A*Pickup Hub:* Kailash Hills, Hyderabad`;
+    const message = `*NEW EV SMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Preferred EV Type:* ${encodeURIComponent(preferredEvType)}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* EV Smith Electric Scooter (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Hyderabad`;
 
     setTimeout(() => {
       window.open(`https://wa.me/918275753239?text=${message}`, '_blank');
@@ -88,10 +89,10 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                 </div>
 
                 <h3 className="text-2xl font-extrabold text-white font-heading">
-                  Rent BGauss Oowah EX
+                  Rent EV Smith Scooter
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
-                  2 Bikes Available at Kailash Hills, Hyderabad
+                  2 Bikes Available at Gajularamaram, Hyderabad
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -148,6 +149,25 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                     />
                   </div>
 
+                  {/* Preferred EV Type Dropdown */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                      Preferred EV Type:
+                    </label>
+                    <select
+                      value={preferredEvType}
+                      onChange={(e) => setPreferredEvType(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none font-medium"
+                    >
+                      <option value="Swappable Vehicle (Swapping Station)">
+                        Swappable Vehicle (Swapping Station)
+                      </option>
+                      <option value="Home Charge">
+                        Home Charge
+                      </option>
+                    </select>
+                  </div>
+
                   {/* Document Type */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
@@ -183,7 +203,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                     <span className="flex items-center gap-1.5 font-semibold">
                       <ShieldCheck className="w-4 h-4" /> Security Deposit:
                     </span>
-                    <span className="font-extrabold font-mono">₹1500 (100% Refundable)</span>
+                    <span className="font-extrabold font-mono">100% Refundable</span>
                   </div>
 
                   {/* Submit Button */}

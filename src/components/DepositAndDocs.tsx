@@ -36,10 +36,10 @@ export default function DepositAndDocs({ onOpenBooking }: DepositProps) {
 
             <div>
               <h3 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] font-heading">
-                Security Deposit: <span className="text-gradient-electric">₹1,500 Only</span>
+                Security Deposit: <span className="text-gradient-electric">100% Refundable</span>
               </h3>
               <p className="text-base text-[var(--text-muted)] mt-3 leading-relaxed font-semibold">
-                We believe in total transparency. A modest ₹1,500 security deposit is collected upon bike pickup and is 100% refunded immediately when you return the vehicle.
+                We believe in total transparency. A modest security deposit is collected upon bike pickup and is 100% refunded immediately when you return the vehicle.
               </p>
             </div>
 
@@ -94,7 +94,7 @@ export default function DepositAndDocs({ onOpenBooking }: DepositProps) {
                 Required <span className="text-gradient-electric">Documents Checklist</span>
               </h2>
               <p className="text-base sm:text-lg text-[var(--text-muted)] mt-2 font-semibold">
-                Bring these simple documents for quick verification during bike collection at Kailash Hills, Hyderabad.
+                Bring these simple documents for quick verification during bike collection at Gajularamaram, Hyderabad.
               </p>
             </div>
 

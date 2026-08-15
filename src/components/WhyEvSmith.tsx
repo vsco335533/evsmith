@@ -24,7 +24,7 @@ export default function WhyEvSmith() {
       icon: CircleDollarSign,
       title: '💰 Affordable',
       subtitle: 'Lowest Rental Rates',
-      desc: 'Unbeatable weekly (₹2000) and monthly (₹7800) rental plans designed for maximum financial savings vs expensive petrol.',
+      desc: 'Unbeatable weekly and monthly rental plans designed for maximum financial savings vs expensive petrol.',
       color: 'from-amber-400 to-[#38d430]',
     },
     {
@@ -45,7 +45,7 @@ export default function WhyEvSmith() {
       icon: MapPin,
       title: '📍 Local Support',
       subtitle: 'Instant Assistance',
-      desc: 'Dedicated local hub at Kailash Hills, Hyderabad. On-call phone support & fast battery swap assistance when needed.',
+      desc: 'Dedicated local hub at Gajularamaram, Hyderabad. On-call phone support & fast battery swap assistance when needed.',
       color: 'from-emerald-400 to-[#38d430]',
     },
   ];

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Phone, ShieldCheck, Star, Gauge, MapPin, Sparkles, CheckCircle2, ChevronRight, ChevronLeft, RotateCw } from 'lucide-react';
+import { Zap, Phone, ShieldCheck, Star, Gauge, MapPin, Sparkles, CheckCircle2, ChevronRight, ChevronLeft, RotateCw, RefreshCw } from 'lucide-react';
 
 interface HeroProps {
   onOpenBooking: (plan?: string) => void;
@@ -29,57 +29,56 @@ interface BikeItem {
 
 const AVAILABLE_BIKES: BikeItem[] = [
   {
-    id: 'oowah-mint',
-    name: 'BGauss Oowah EX',
+    id: 'scooter-mint',
+    name: 'Electric Scooter',
     variant: 'Electric Mint Edition',
     speed: '65 km/h',
     range: '100 km',
     charge: '4.0 Hours',
-    weeklyPrice: '₹2,000',
-    monthlyPrice: '₹7,800',
+    weeklyPrice: '',
+    monthlyPrice: '',
     badge: 'Popular Delivery Pick',
     badgeBg: 'bg-[#38d430]',
     badgeText: 'text-[#081426]',
     image: '/assets/scooter_mint_transparent.png',
   },
   {
-    id: 'oowah-white',
-    name: 'BGauss Oowah EX',
-    variant: 'Pristine White Edition',
+    id: 'scooter-urban-pro',
+    name: 'Electric Scooter Pro',
+    variant: 'Urban Delivery & Commute Edition',
     speed: '65 km/h',
-    range: '100 km',
-    charge: '4.0 Hours',
-    weeklyPrice: '₹2,000',
-    monthlyPrice: '₹7,800',
-    badge: 'Executive Commute',
+    range: '110 km',
+    charge: '3.5 Hours',
+    weeklyPrice: '',
+    monthlyPrice: '',
+    badge: 'Quick Delivery Ready',
     badgeBg: 'bg-[#00f0ff]',
     badgeText: 'text-[#081426]',
-    image: '/assets/scooter_white_transparent.png',
+    image: '/assets/new_bike.png',
   },
   {
-    id: 'c12i-special',
-    name: 'BGauss C12i Heavy Duty',
+    id: 'scooter-heavy-duty',
+    name: 'Heavy Duty EV Scooter',
     variant: 'Extended Battery Range',
     speed: '60 km/h',
     range: '123 km',
     charge: '3.5 Hours',
-    weeklyPrice: '₹2,200',
-    monthlyPrice: '₹8,000',
+    weeklyPrice: '',
+    monthlyPrice: '',
     badge: 'Ultra Long Mileage',
     badgeBg: 'bg-emerald-500',
     badgeText: 'text-white',
     image: '/assets/scooter_mint_transparent.png',
   },
   {
-    id: 'varcas-crony',
-    name: 'Varcas Crony',
+    id: 'scooter-smart',
+    name: 'Smart EV Scooter',
     variant: 'High Mileage Red Edition',
     speed: '55 km/h',
     range: '100 km',
     charge: '4.0 Hours',
-    weeklyPrice: '₹1,800',
-    fifteenDayPrice: '₹3,600',
-    monthlyPrice: '₹7,000',
+    weeklyPrice: '',
+    monthlyPrice: '',
     badge: 'Red — Available Now',
     badgeBg: 'bg-red-600',
     badgeText: 'text-white',
@@ -232,7 +231,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
             <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-panel border border-[var(--card-border)] text-[var(--text-primary)] font-extrabold">
                 <MapPin className="w-4 h-4 text-[#38d430]" />
-                Kailash Hills, Hyderabad
+                Gajularamaram, Hyderabad
               </span>
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-panel border border-[var(--card-border)] text-[var(--text-primary)] font-extrabold">
                 <CheckCircle2 className="w-4 h-4 text-[#38d430]" />
@@ -240,7 +239,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
               </span>
               <span className="flex items-center gap-1.5 px-4 py-2 rounded-xl glass-panel border border-[var(--card-border)] text-[var(--text-primary)] font-extrabold">
                 <ShieldCheck className="w-4 h-4 text-[#38d430]" />
-                ₹1500 Security Deposit
+                Refundable Security Deposit
               </span>
             </div>
 
@@ -253,7 +252,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                 className="px-8 py-4 rounded-2xl bg-[#38d430] hover:bg-[#42e83a] text-[#081426] text-base font-black shadow-xl flex items-center justify-center gap-3 transition-all glow-green cursor-pointer"
               >
                 <Zap className="w-5 h-5 fill-current text-[#081426]" />
-                <span>Rent Now — ₹1800/wk</span>
+                <span>Rent Now</span>
               </motion.button>
 
               <motion.a
@@ -330,7 +329,6 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                 <div
                   onClick={() => onOpenLightbox(currentBike.image)}
                   className="relative h-64 sm:h-72 w-full my-1 flex items-center justify-center cursor-pointer group rounded-2xl overflow-hidden"
-                  style={{ backgroundColor: '#0a1a2e' }}
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,212,48,0.15)_0%,_transparent_70%)] pointer-events-none" />
                   <Image
@@ -365,19 +363,12 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                   </div>
                 </div>
 
-                {/* Price & Rent Button Bar */}
+                {/* Status & Rent Button Bar */}
                 <div className="mt-3 pt-3 border-t border-[var(--card-border)] flex items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] text-[var(--text-muted)] font-bold uppercase block">Rental Rate</span>
+                    <span className="text-[10px] text-[var(--text-muted)] font-bold uppercase block">Status</span>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-xl sm:text-2xl font-black text-[#38d430]">{currentBike.weeklyPrice}</span>
-                      <span className="text-xs font-bold text-[var(--text-muted)]">/week</span>
-                      {currentBike.fifteenDayPrice && (
-                        <span className="text-xs text-[var(--text-muted)] font-medium ml-1 hidden sm:inline">· {currentBike.fifteenDayPrice}/15d · {currentBike.monthlyPrice}/mo</span>
-                      )}
-                      {!currentBike.fifteenDayPrice && (
-                        <span className="text-xs text-[var(--text-muted)] font-medium ml-1 hidden sm:inline">({currentBike.monthlyPrice}/mo)</span>
-                      )}
+                      <span className="text-sm sm:text-base font-black text-[#38d430]">Ready for Pickup</span>
                     </div>
                   </div>
 
@@ -388,7 +379,7 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
                     className="px-5 py-2.5 rounded-xl bg-[#38d430] hover:bg-[#42e83a] text-[#081426] text-xs sm:text-sm font-black shadow-md flex items-center gap-1.5 whitespace-nowrap glow-green cursor-pointer shrink-0"
                   >
                     <Zap className="w-3.5 h-3.5 fill-current text-[#081426]" />
-                    <span>Rent This Bike</span>
+                    <span>Rent Now</span>
                   </motion.button>
                 </div>
 
@@ -416,72 +407,88 @@ export default function Hero({ onOpenBooking, onOpenLightbox }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 sm:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full"
+          className="mt-16 sm:mt-24 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 w-full"
         >
           {/* Stat 1: Top Speed */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
+          <div className="glass-panel p-5 sm:p-7 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-black text-[var(--text-muted)] uppercase tracking-wider">Top Speed</span>
               <div className="p-2.5 rounded-2xl bg-[#38d430]/15 text-[#38d430]">
-                <Gauge className="w-6 h-6" />
+                <Gauge className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
+              <span className="text-2xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
                 {counters.speed}
               </span>
-              <span className="text-sm font-black text-[var(--text-muted)]">km/h</span>
+              <span className="text-xs sm:text-sm font-black text-[var(--text-muted)]">km/h</span>
             </div>
             <p className="text-xs text-[var(--text-muted)] mt-2 font-bold">High Efficiency City Drive</p>
           </div>
 
           {/* Stat 2: Range */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
+          <div className="glass-panel p-5 sm:p-7 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-black text-[var(--text-muted)] uppercase tracking-wider">Battery Range</span>
               <div className="p-2.5 rounded-2xl bg-[#00f0ff]/15 text-[#00f0ff]">
-                <Zap className="w-6 h-6" />
+                <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#00f0ff] transition-colors">
+              <span className="text-2xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#00f0ff] transition-colors">
                 {counters.range}
               </span>
-              <span className="text-sm font-black text-[var(--text-muted)]">km</span>
+              <span className="text-xs sm:text-sm font-black text-[var(--text-muted)]">km</span>
             </div>
             <p className="text-xs text-[var(--text-muted)] mt-2 font-bold">Single Charge Mileage</p>
           </div>
 
           {/* Stat 3: Fast Charging */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
+          <div className="glass-panel p-5 sm:p-7 rounded-3xl border border-[var(--card-border)] hover:border-[#38d430]/60 transition-all group glass-card-hover">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-black text-[var(--text-muted)] uppercase tracking-wider">Fast Charging</span>
               <div className="p-2.5 rounded-2xl bg-[#38d430]/15 text-[#38d430]">
-                <Sparkles className="w-6 h-6" />
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
+              <span className="text-2xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
                 {counters.charge}
               </span>
-              <span className="text-sm font-black text-[var(--text-muted)]">Hours</span>
+              <span className="text-xs sm:text-sm font-black text-[var(--text-muted)]">Hours</span>
             </div>
             <p className="text-xs text-[var(--text-muted)] mt-2 font-bold">0 to 100% Quick Charge</p>
           </div>
 
-          {/* Stat 4: Bikes Available */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[#38d430]/40 hover:border-[#38d430] transition-all group glass-card-hover">
+          {/* Stat 4: Battery Swappable */}
+          <div className="glass-panel p-5 sm:p-7 rounded-3xl border border-[#00f0ff]/40 hover:border-[#00f0ff] transition-all group glass-card-hover">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-black text-[#38d430] uppercase tracking-wider">Live Inventory</span>
-              <div className="p-2.5 rounded-2xl bg-[#38d430]/20 text-[#38d430] pulse-green-badge">
-                <Sparkles className="w-6 h-6" />
+              <span className="text-xs font-black text-[#00f0ff] uppercase tracking-wider">Battery Swappable</span>
+              <div className="p-2.5 rounded-2xl bg-[#00f0ff]/20 text-[#00f0ff]">
+                <RefreshCw className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl sm:text-5xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
+              <span className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#00f0ff] transition-colors">
+                Available
+              </span>
+            </div>
+            <p className="text-xs text-[#00f0ff] mt-2 font-extrabold">Swapping Station & Hub Ready</p>
+          </div>
+
+          {/* Stat 5: Bikes Available */}
+          <div className="glass-panel p-5 sm:p-7 rounded-3xl border border-[#38d430]/40 hover:border-[#38d430] transition-all group glass-card-hover col-span-2 sm:col-span-1">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-black text-[#38d430] uppercase tracking-wider">Live Inventory</span>
+              <div className="p-2.5 rounded-2xl bg-[#38d430]/20 text-[#38d430] pulse-green-badge">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-2xl sm:text-4xl font-black text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors">
                 {counters.bikes}+
               </span>
-              <span className="text-sm font-bold text-[#38d430]">Bikes Ready</span>
+              <span className="text-xs sm:text-sm font-bold text-[#38d430]">Bikes Ready</span>
             </div>
             <p className="text-xs text-[var(--text-primary)] mt-2 font-extrabold">Instant Pickup in Hyderabad</p>
           </div>

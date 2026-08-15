@@ -167,24 +167,24 @@ const ROW2 = [...[...PARTNERS].reverse(), ...[...PARTNERS].reverse()];
 function PartnerCard({ partner }: { partner: Partner }) {
   const { Icon, image } = partner;
   return (
-    <div className="flex-shrink-0 w-[220px] sm:w-[260px] glass-panel rounded-2xl border border-[var(--card-border)] p-4 sm:p-5 flex items-center gap-4 transition-all duration-300 group cursor-default hover:border-[#38d430]/50">
+    <div className="flex-shrink-0 w-[160px] sm:w-[220px] md:w-[260px] glass-panel rounded-xl sm:rounded-2xl border border-[var(--card-border)] p-2.5 sm:p-4 md:p-5 flex items-center gap-2.5 sm:gap-4 transition-all duration-300 group cursor-default hover:border-[#38d430]/50">
       {/* App icon tile */}
       <div
-        className="w-14 h-14 rounded-2xl shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 relative bg-white"
-        style={{ boxShadow: `0 6px 18px -4px ${partner.accent}66` }}
+        className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 relative bg-white"
+        style={{ boxShadow: `0 4px 14px -4px ${partner.accent}66` }}
       >
         {image ? (
-          <Image src={image} alt={partner.name} fill className="object-cover" sizes="56px" />
+          <Image src={image} alt={partner.name} fill className="object-cover" sizes="(max-width: 640px) 36px, 56px" />
         ) : (
           Icon && <Icon />
         )}
       </div>
 
       <div className="min-w-0">
-        <h4 className="text-sm sm:text-base font-black text-[var(--text-primary)] truncate group-hover:text-[#38d430] transition-colors duration-300">
+        <h4 className="text-xs sm:text-sm md:text-base font-black text-[var(--text-primary)] truncate group-hover:text-[#38d430] transition-colors duration-300">
           {partner.name}
         </h4>
-        <p className="text-[11px] sm:text-xs font-bold truncate mt-0.5" style={{ color: partner.accent }}>
+        <p className="text-[10px] sm:text-[11px] md:text-xs font-bold truncate mt-0.5" style={{ color: partner.accent }}>
           {partner.tagline}
         </p>
       </div>
@@ -261,7 +261,7 @@ export default function TrustedPartners() {
             <span className="text-sm font-bold text-[#38d430]">100+ Active Delivery Riders</span>
           </div>
           <div className="h-6 w-px bg-[var(--card-border)] hidden sm:block" />
-          <span className="text-sm font-black text-[var(--text-muted)]">₹0 Petrol • 100 KM Range • Zero Maintenance</span>
+          <span className="text-sm font-black text-[var(--text-muted)]">Zero Petrol • 100 KM Range • Zero Maintenance</span>
         </motion.div>
 
       </div>

@@ -6,8 +6,6 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import TrustedPartners from '@/components/TrustedPartners';
 import WhyEvSmith from '@/components/WhyEvSmith';
-import FeaturedBike from '@/components/FeaturedBike';
-import PricingCalculator from '@/components/PricingCalculator';
 import DepositAndDocs from '@/components/DepositAndDocs';
 import BookingProcess from '@/components/BookingProcess';
 import Testimonials from '@/components/Testimonials';
@@ -50,12 +48,6 @@ export default function Home() {
 
       {/* Why EV Smith */}
       <WhyEvSmith />
-
-      {/* Featured Bike: BGauss Oowah EX */}
-      <FeaturedBike onOpenBooking={handleOpenBooking} onOpenLightbox={handleOpenLightbox} />
-
-      {/* Pricing Cards & Interactive EV Cost Calculator */}
-      <PricingCalculator onOpenBooking={handleOpenBooking} />
 
       {/* Security Deposit & Required Documents Checklist */}
       <DepositAndDocs onOpenBooking={() => handleOpenBooking('monthly')} />

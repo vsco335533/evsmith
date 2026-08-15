@@ -13,7 +13,7 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
     {
       number: '01',
       title: 'Choose Plan',
-      desc: 'Select Weekly (₹2000), 15 Days (₹4000), or Monthly (₹7800) plan.',
+      desc: 'Select Weekly, 15 Days, or Monthly rental plan.',
       icon: CalendarCheck,
       color: 'border-[#38d430] text-[#38d430]',
     },
@@ -34,7 +34,7 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
     {
       number: '04',
       title: 'Collect Bike',
-      desc: 'Pick up your BGauss Oowah EX at Kailash Hills, Hyderabad.',
+      desc: 'Pick up your electric scooter at Gajularamaram, Hyderabad.',
       icon: Key,
       color: 'border-amber-400 text-amber-400',
     },
@@ -63,7 +63,7 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
             Simple 5-Step <span className="text-gradient-electric">Rental Process</span>
           </h2>
           <p className="text-base sm:text-xl theme-text-muted font-medium">
-            From selection to riding out on your BGauss Oowah EX in less than 15 minutes!
+            From selection to riding out on your electric scooter in less than 15 minutes!
           </p>
         </div>
 

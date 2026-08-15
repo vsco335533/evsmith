@@ -10,7 +10,7 @@ export default function Testimonials() {
       name: 'Rahul',
       role: 'Daily Commuter, Kukatpally',
       rating: 5,
-      comment: 'Affordable and smooth experience. Rented for a month to commute to office. Saved over ₹4000 on petrol!',
+      comment: 'Affordable and smooth experience. Rented for a month to commute to office. Saved significantly on petrol!',
       badge: 'Verified Rider',
     },
     {
@@ -31,7 +31,7 @@ export default function Testimonials() {
       name: 'Suresh V.',
       role: 'College Student, Pragathi Nagar',
       rating: 5,
-      comment: 'Super fast deposit refund when I returned the bike! Staff at Kailash Hills hub are very helpful.',
+      comment: 'Super fast deposit refund when I returned the bike! Staff at Gajularamaram hub are very helpful.',
       badge: 'Verified Student',
     },
   ];

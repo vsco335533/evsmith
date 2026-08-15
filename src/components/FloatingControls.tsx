@@ -33,7 +33,7 @@ export default function FloatingControls({ onOpenBooking }: FloatingProps) {
         <motion.a
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          href="https://wa.me/918275753239?text=Hi%20EV%20Smith,%20I%20want%20to%20rent%20the%20BGauss%20Oowah%20EX%20bike!"
+          href="https://wa.me/918275753239?text=Hi%20EV%20Smith,%20I%20want%20to%20rent%20an%20electric%20scooter!"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Enquiry"
@@ -91,7 +91,7 @@ export default function FloatingControls({ onOpenBooking }: FloatingProps) {
         </a>
 
         <a
-          href="https://wa.me/918275753239?text=Hi%20EV%20Smith,%20I%20want%20to%20rent%20the%20BGauss%20Oowah%20EX%20bike!"
+          href="https://wa.me/918275753239?text=Hi%20EV%20Smith,%20I%20want%20to%20rent%20an%20electric%20scooter!"
           target="_blank"
           rel="noopener noreferrer"
           className="p-3.5 rounded-2xl bg-[#25D366] text-white shrink-0 shadow-lg"
@@ -104,7 +104,7 @@ export default function FloatingControls({ onOpenBooking }: FloatingProps) {
           className="flex-1 py-3.5 rounded-2xl bg-[#38d430] text-[#081426] font-extrabold text-sm flex items-center justify-center gap-2 shadow-xl glow-green"
         >
           <Zap className="w-4 h-4 fill-current" />
-          <span>Rent Now — ₹2000/wk</span>
+          <span>Rent Now</span>
         </button>
       </div>
     </>

@@ -73,9 +73,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   };
 
   const navLinks = [
-    { name: 'Featured Bike', href: '#bike' },
     { name: 'Why Us', href: '#why-us' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'Documents', href: '#documents' },
     { name: 'Process', href: '#process' },
     { name: 'Contact', href: '#contact' },
@@ -222,7 +220,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 className="w-full py-3.5 rounded-xl font-extrabold bg-[#38d430] text-[#081426] text-center flex items-center justify-center gap-2 shadow-lg glow-green"
               >
                 <Zap className="w-4 h-4 fill-current" />
-                Rent Now (from ₹2000/wk)
+                Rent Now
               </button>
             </div>
           </motion.div>

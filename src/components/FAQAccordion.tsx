@@ -15,12 +15,12 @@ export default function FAQAccordion() {
     },
     {
       q: 'How much is the security deposit and when is it refunded?',
-      a: 'The security deposit is ₹1,500 only. It is 100% refundable immediately upon returning the electric bike in good condition, via UPI bank transfer or cash.',
+      a: 'The security deposit is 100% refundable immediately upon returning the electric bike in good condition, via UPI bank transfer or cash.',
     },
 
     {
       q: 'What happens if the battery becomes low while riding?',
-      a: 'The BGauss Oowah EX comes with a single removable battery pack that can be charged at any regular 15A home or shop socket using the included fast charger. Additionally, we provide instant battery swap support at our Kailash Hills, Hyderabad hub.',
+      a: 'Our electric scooters come with a single removable battery pack that can be charged at any regular 15A home or shop socket using the included fast charger. Additionally, we provide instant battery swap support at our Gajularamaram, Hyderabad hub.',
     },
     {
       q: 'Can I extend my rental duration easily?',
