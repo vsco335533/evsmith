@@ -48,21 +48,21 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
   ];
 
   return (
-    <section id="process" className="py-24 sm:py-32 relative bg-cyber-grid overflow-hidden">
+    <section id="process" className="py-12 sm:py-24 lg:py-32 relative bg-cyber-grid overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#38d430]/10 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38d430]/15 border border-[#38d430]/35 text-xs font-black text-[#38d430] uppercase tracking-widest">
-            <Sparkles className="w-4 h-4" /> 5-Minute Booking Workflow
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#38d430]/15 border border-[#38d430]/35 text-[11px] sm:text-xs font-black text-[#38d430] uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 5-Minute Booking Workflow
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black theme-text-primary font-heading tracking-tight">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-black theme-text-primary font-heading tracking-tight">
             Simple 5-Step <span className="text-gradient-electric">Rental Process</span>
           </h2>
-          <p className="text-base sm:text-xl theme-text-muted font-medium">
+          <p className="text-sm sm:text-xl theme-text-muted font-medium">
             From selection to riding out on your electric scooter in less than 15 minutes!
           </p>
         </div>
@@ -72,30 +72,30 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
           {/* Connecting Line behind steps (Desktop) */}
           <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-[#38d430] via-[#00f0ff] to-[#38d430] -translate-y-1/2 z-0 opacity-40 rounded-full" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 relative z-10">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <motion.div
                   key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="glass-panel p-7 rounded-3xl border border-slate-700/50 hover:border-[#38d430]/60 transition-all duration-300 group glass-card-hover flex flex-col justify-between"
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="glass-panel p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-700/50 hover:border-[#38d430]/60 transition-all duration-300 group glass-card-hover flex flex-col justify-between"
                 >
                   <div>
                     {/* Top Number & Icon */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-3xl font-black font-mono theme-text-muted group-hover:text-[#38d430] transition-colors">
+                    <div className="flex items-center justify-between mb-2.5 sm:mb-6">
+                      <span className="text-xl sm:text-3xl font-black font-mono theme-text-muted group-hover:text-[#38d430] transition-colors">
                         {step.number}
                       </span>
-                      <div className={`p-3.5 rounded-2xl glass-panel border ${step.color} group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-6 h-6" />
+                      <div className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl glass-panel border ${step.color} group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-black theme-text-primary font-heading mb-2 group-hover:text-[#38d430] transition-colors">
+                    <h3 className="text-base sm:text-xl font-black theme-text-primary font-heading mb-1 sm:mb-2 group-hover:text-[#38d430] transition-colors">
                       {step.title}
                     </h3>
                     <p className="text-xs sm:text-sm theme-text-muted leading-relaxed font-medium">
@@ -104,9 +104,9 @@ export default function BookingProcess({ onOpenBooking }: BookingProcessProps) {
                   </div>
 
                   {/* Arrow Indicator */}
-                  <div className="mt-6 pt-4 border-t border-slate-700/40 flex items-center justify-between text-xs font-bold theme-text-muted">
+                  <div className="mt-3 sm:mt-6 pt-2.5 sm:pt-4 border-t border-slate-700/40 flex items-center justify-between text-[11px] sm:text-xs font-bold theme-text-muted">
                     <span>Step {index + 1} of 5</span>
-                    <ArrowRight className="w-4 h-4 text-[#38d430] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#38d430] group-hover:translate-x-1 transition-transform" />
                   </div>
                 </motion.div>
               );
