@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Zap, CheckCircle2, ShieldCheck, MessageSquare, Phone, Upload, Loader2 } from 'lucide-react';
+import { X, Zap, CheckCircle2, ShieldCheck, MessageSquare, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface BookingModalProps {
@@ -12,23 +12,15 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClose }: BookingModalProps) {
-  const [plan, setPlan] = useState(selectedPlanId);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [preferredEvType, setPreferredEvType] = useState('Swappable Vehicle (Swapping Station)');
   const [docType, setDocType] = useState('Aadhaar');
   const [pickupDate, setPickupDate] = useState('');
   const [workLocation, setWorkLocation] = useState('');
-  const [address, setAddress] = useState('');
-  const [deliveryService, setDeliveryService] = useState('Personal Commute / Other');
+  const [deliveryService, setDeliveryService] = useState('Swiggy');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const plans = [
-    { id: 'weekly', name: 'Weekly Plan', price: '' },
-    { id: '15days', name: '15 Days Plan', price: '' },
-    { id: 'monthly', name: 'Monthly Plan', price: '' },
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,12 +34,11 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
         body: JSON.stringify({
           name,
           phone,
-          plan,
+          plan: selectedPlanId || 'monthly',
           preferredEvType,
           docType,
           pickupDate,
           workLocation,
-          address,
           deliveryService,
         }),
       });
@@ -70,7 +61,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
       // fallback
     }
 
-    const message = `*NEW EVSMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Delivery Service / Work Company:* ${encodeURIComponent(deliveryService)}%0A*Work Location / Area:* ${encodeURIComponent(workLocation || 'Not specified')}%0A*Residential Address:* ${encodeURIComponent(address || 'Not specified')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Preferred EV Type:* ${encodeURIComponent(preferredEvType)}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* EVSmith Electric Scooter (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Hyderabad`;
+    const message = `*NEW EVSMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Delivery Service / Work Company:* ${encodeURIComponent(deliveryService)}%0A*Work Location / Area:* ${encodeURIComponent(workLocation || 'Not specified')}%0A*Preferred EV Type:* ${encodeURIComponent(preferredEvType)}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* EVSmith Electric Scooter (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Hyderabad`;
 
     setTimeout(() => {
       window.open(`https://wa.me/918275753239?text=${message}`, '_blank');
@@ -124,29 +115,6 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                  {/* Select Plan */}
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                      Choose Rental Package:
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {plans.map((p) => (
-                        <button
-                          key={p.id}
-                          type="button"
-                          onClick={() => setPlan(p.id)}
-                          className={`py-2.5 px-2 rounded-xl text-xs font-bold transition-all border ${
-                            plan === p.id
-                              ? 'bg-[#38d430] text-[#081426] border-[#38d430] shadow'
-                              : 'bg-[#0d1e38] text-slate-300 border-slate-700 hover:border-[#38d430]'
-                          }`}
-                        >
-                          {p.name}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Name Input */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
@@ -177,20 +145,6 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                     />
                   </div>
 
-                  {/* Work Location Input */}
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Work Location / Delivery Area:
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Kukatpally, HITEC City, Kondapur"
-                      value={workLocation}
-                      onChange={(e) => setWorkLocation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none"
-                    />
-                  </div>
-
                   {/* Delivery Service / Company Dropdown */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
@@ -206,10 +160,16 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                       <option value="Rapido">Rapido</option>
                       <option value="Blinkit">Blinkit</option>
                       <option value="Zepto">Zepto</option>
+                      <option value="JioMart">JioMart</option>
+                      <option value="AJIO">AJIO</option>
+                      <option value="Uber / Uber Eats">Uber / Uber Eats</option>
+                      <option value="Ola / Ola Electric">Ola / Ola Electric</option>
+                      <option value="Delhivery">Delhivery</option>
+                      <option value="DTDC">DTDC</option>
                       <option value="Dunzo">Dunzo</option>
-                      <option value="BigBasket">BigBasket</option>
+                      <option value="BigBasket / Tata Neu">BigBasket / Tata Neu</option>
                       <option value="Amazon Flex">Amazon Flex</option>
-                      <option value="Flipkart">Flipkart Quick</option>
+                      <option value="Flipkart / Flipkart Minutes">Flipkart / Flipkart Minutes</option>
                       <option value="Porter">Porter</option>
                       <option value="Shadowfax">Shadowfax</option>
                       <option value="Ecom Express">Ecom Express</option>
@@ -217,17 +177,17 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                     </select>
                   </div>
 
-                  {/* Residential Address Input */}
+                  {/* Work Location Input */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Residential / Home Address:
+                      Work Location / Delivery Area:
                     </label>
-                    <textarea
-                      rows={2}
-                      placeholder="Enter house no, street, locality in Hyderabad"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none resize-none"
+                    <input
+                      type="text"
+                      placeholder="e.g. Kukatpally, HITEC City, Kondapur"
+                      value={workLocation}
+                      onChange={(e) => setWorkLocation(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none"
                     />
                   </div>
 
@@ -250,7 +210,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                     </select>
                   </div>
 
-                  {/* Document Type */}
+                  {/* Document Type & Pickup Date */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">

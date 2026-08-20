@@ -54,6 +54,24 @@ function ZeptoIcon() {
   );
 }
 
+function JioMartIcon() {
+  return (
+    <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect width="56" height="56" rx="14" fill="#008ECC"/>
+      <text x="28" y="36" textAnchor="middle" fill="white" fontFamily="Arial Black, sans-serif" fontSize="16" fontWeight="900">JIO</text>
+    </svg>
+  );
+}
+
+function AjioIcon() {
+  return (
+    <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect width="56" height="56" rx="14" fill="#2C4152"/>
+      <text x="28" y="36" textAnchor="middle" fill="white" fontFamily="Arial Black, sans-serif" fontSize="15" fontWeight="900">AJIO</text>
+    </svg>
+  );
+}
+
 function DunzoIcon() {
   return (
     <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -149,6 +167,8 @@ interface Partner {
 const PARTNERS: Partner[] = [
   { name: 'Swiggy',        tagline: 'Food Delivery',       accent: '#FC8019', image: '/instamart.png', Icon: SwiggyIcon },
   { name: 'Zomato',        tagline: 'Food Delivery',       accent: '#E23744', image: '/zomato.png', Icon: ZomatoIcon },
+  { name: 'JioMart',       tagline: 'Grocery Express',     accent: '#008ECC', Icon: JioMartIcon },
+  { name: 'AJIO',          tagline: 'Fashion Delivery',    accent: '#2C4152', Icon: AjioIcon },
   { name: 'Rapido',        tagline: 'Bike Taxi',           accent: '#FFCF44', image: '/rapido.png', Icon: RapidoIcon },
   { name: 'Blinkit',       tagline: 'Instant Delivery',    accent: '#F8CB46', image: '/blinkit.png', Icon: BlinkitIcon },
   { name: 'Zepto',         tagline: '10-Min Delivery',     accent: '#7B2FF2', image: '/zepto.png', Icon: ZeptoIcon },
