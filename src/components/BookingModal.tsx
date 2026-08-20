@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Zap, CheckCircle2, ShieldCheck, MessageSquare, Phone, Upload } from 'lucide-react';
+import { X, Zap, CheckCircle2, ShieldCheck, MessageSquare, Phone, Upload, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface BookingModalProps {
@@ -18,7 +18,11 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
   const [preferredEvType, setPreferredEvType] = useState('Swappable Vehicle (Swapping Station)');
   const [docType, setDocType] = useState('Aadhaar');
   const [pickupDate, setPickupDate] = useState('');
+  const [workLocation, setWorkLocation] = useState('');
+  const [address, setAddress] = useState('');
+  const [deliveryService, setDeliveryService] = useState('Personal Commute / Other');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const plans = [
     { id: 'weekly', name: 'Weekly Plan', price: '' },
@@ -26,11 +30,35 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
     { id: 'monthly', name: 'Monthly Plan', price: '' },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
 
-    // Trigger confetti
+    // Save submission to Neon PostgreSQL database via API route
+    try {
+      await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone,
+          plan,
+          preferredEvType,
+          docType,
+          pickupDate,
+          workLocation,
+          address,
+          deliveryService,
+        }),
+      });
+    } catch (err) {
+      console.error('Failed to store booking to database:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
+
+    // Trigger confetti animation
     try {
       confetti({
         particleCount: 100,
@@ -42,11 +70,11 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
       // fallback
     }
 
-    const message = `*NEW EV SMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Preferred EV Type:* ${encodeURIComponent(preferredEvType)}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* EV Smith Electric Scooter (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Hyderabad`;
+    const message = `*NEW EVSMITH BIKE BOOKING REQUEST*%0A%0A*Name:* ${encodeURIComponent(name || 'Customer')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Delivery Service / Work Company:* ${encodeURIComponent(deliveryService)}%0A*Work Location / Area:* ${encodeURIComponent(workLocation || 'Not specified')}%0A*Residential Address:* ${encodeURIComponent(address || 'Not specified')}%0A*Plan Selected:* ${encodeURIComponent(plan.toUpperCase())}%0A*Preferred EV Type:* ${encodeURIComponent(preferredEvType)}%0A*Doc Type:* ${encodeURIComponent(docType)}%0A*Preferred Pickup:* ${encodeURIComponent(pickupDate || 'Today')}%0A*Vehicle:* EVSmith Electric Scooter (2 Bikes Available)%0A*Pickup Hub:* Gajularamaram, Hyderabad`;
 
     setTimeout(() => {
       window.open(`https://wa.me/918275753239?text=${message}`, '_blank');
-    }, 800);
+    }, 600);
   };
 
   return (
@@ -89,7 +117,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                 </div>
 
                 <h3 className="text-2xl font-extrabold text-white font-heading">
-                  Rent EV Smith Scooter
+                  Rent EVSmith Scooter
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
                   2 Bikes Available at Gajularamaram, Hyderabad
@@ -146,6 +174,60 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none"
+                    />
+                  </div>
+
+                  {/* Work Location Input */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                      Work Location / Delivery Area:
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Kukatpally, HITEC City, Kondapur"
+                      value={workLocation}
+                      onChange={(e) => setWorkLocation(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none"
+                    />
+                  </div>
+
+                  {/* Delivery Service / Company Dropdown */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                      Delivery Service / Company:
+                    </label>
+                    <select
+                      value={deliveryService}
+                      onChange={(e) => setDeliveryService(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none font-medium"
+                    >
+                      <option value="Swiggy">Swiggy (Instamart)</option>
+                      <option value="Zomato">Zomato</option>
+                      <option value="Rapido">Rapido</option>
+                      <option value="Blinkit">Blinkit</option>
+                      <option value="Zepto">Zepto</option>
+                      <option value="Dunzo">Dunzo</option>
+                      <option value="BigBasket">BigBasket</option>
+                      <option value="Amazon Flex">Amazon Flex</option>
+                      <option value="Flipkart">Flipkart Quick</option>
+                      <option value="Porter">Porter</option>
+                      <option value="Shadowfax">Shadowfax</option>
+                      <option value="Ecom Express">Ecom Express</option>
+                      <option value="Personal Commute / Other">Personal Commute / Other</option>
+                    </select>
+                  </div>
+
+                  {/* Residential Address Input */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                      Residential / Home Address:
+                    </label>
+                    <textarea
+                      rows={2}
+                      placeholder="Enter house no, street, locality in Hyderabad"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none resize-none"
                     />
                   </div>
 
@@ -209,10 +291,20 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-2xl bg-[#38d430] hover:bg-[#42e83a] text-[#081426] font-extrabold text-base flex items-center justify-center gap-2 shadow-xl glow-green"
+                    disabled={isSubmitting}
+                    className="w-full py-4 rounded-2xl bg-[#38d430] hover:bg-[#42e83a] disabled:opacity-70 text-[#081426] font-extrabold text-base flex items-center justify-center gap-2 shadow-xl glow-green transition-all"
                   >
-                    <MessageSquare className="w-5 h-5" />
-                    <span>Confirm & Connect on WhatsApp</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <span>Saving Reservation...</span>
+                      </>
+                    ) : (
+                      <>
+                        <MessageSquare className="w-5 h-5" />
+                        <span>Confirm & Connect on WhatsApp</span>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -226,7 +318,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   Reservation Initiated!
                 </h3>
                 <p className="text-xs text-slate-300">
-                  Redirecting to EV Smith WhatsApp team to finalize bike pickup details...
+                  Redirecting to EVSmith WhatsApp team to finalize bike pickup details...
                 </p>
 
                 <div className="pt-4">

@@ -37,7 +37,7 @@ export default function BrandLogo({ className = '', size = 'md', showSubtitle = 
       >
         <Image
           src="/assets/logo_original.png"
-          alt="EV Smith Logo"
+          alt="EVSmith Logo"
           width={72}
           height={72}
           className="object-contain w-full h-full"
@@ -48,7 +48,7 @@ export default function BrandLogo({ className = '', size = 'md', showSubtitle = 
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5">
           <span className={`${textSizes[size]} font-black tracking-tight text-[var(--text-primary)] font-heading group-hover:text-[#38d430] transition-colors whitespace-nowrap`}>
-            EV <span className="text-[#38d430]">SMITH</span>
+            EV<span className="text-[#38d430]">SMITH</span>
           </span>
         </div>
         {showSubtitle && (

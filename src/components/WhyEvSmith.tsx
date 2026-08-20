@@ -62,7 +62,7 @@ export default function WhyEvSmith() {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-24">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#38d430]/15 border border-[#38d430]/35 text-[11px] sm:text-xs font-black text-[#38d430] uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Why Choose EV Smith
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Why Choose EVSmith
           </div>
           <h2 className="text-2xl sm:text-5xl lg:text-6xl font-black text-[var(--text-primary)] font-heading tracking-tight leading-tight">
             Built for <span className="text-gradient-electric">Smart Commuters</span> & Delivery Champions

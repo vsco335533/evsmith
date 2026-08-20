@@ -52,7 +52,7 @@ export default function Testimonials() {
             Loved by <span className="text-gradient-electric">Riders across Hyderabad</span>
           </h2>
           <p className="text-base sm:text-xl theme-text-muted font-medium">
-            Read what our daily commuters, students, and delivery partners say about EV Smith.
+            Read what our daily commuters, students, and delivery partners say about EVSmith.
           </p>
         </div>
 

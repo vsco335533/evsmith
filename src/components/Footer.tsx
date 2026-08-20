@@ -35,7 +35,7 @@ export default function Footer() {
             <h4 className="text-sm font-black text-[var(--text-primary)] uppercase tracking-wider font-heading">Quick Links</h4>
             <ul className="space-y-2.5 text-sm font-medium">
               <li><a href="#bike" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Electric Scooter Specs</a></li>
-              <li><a href="#why-us" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Why EV Smith</a></li>
+              <li><a href="#why-us" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Why EVSmith</a></li>
               <li><a href="#documents" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Required Documents</a></li>
               <li><a href="#process" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">5-Step Booking Process</a></li>
               <li><a href="#faq" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Frequently Asked Questions</a></li>
@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[var(--text-muted)] font-medium gap-4">
-          <p>© 2026 EV Smith. All rights reserved. Designed for Premium EV Rentals in Hyderabad.</p>
+          <p>© 2026 EVSmith. All rights reserved. Designed for Premium EV Rentals in Hyderabad.</p>
           <div className="flex items-center gap-6">
             <a href="#faq" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Privacy Policy</a>
             <a href="#faq" className="text-[var(--text-muted)] hover:text-[#38d430] transition-colors">Terms of Service</a>

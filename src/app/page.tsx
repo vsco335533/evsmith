@@ -46,7 +46,7 @@ export default function Home() {
       {/* Trusted Delivery Partners Marquee */}
       <TrustedPartners />
 
-      {/* Why EV Smith */}
+      {/* Why EVSmith */}
       <WhyEvSmith />
 
       {/* Security Deposit & Required Documents Checklist */}

@@ -24,11 +24,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'EV Smith | Premium Electric Bike Rentals in Hyderabad',
+  title: 'EVSmith | Premium Electric Bike Rentals in Hyderabad',
   description:
     'Affordable Premium Electric Scooter Rentals in Hyderabad with 100 KM Range, 65 km/h Top Speed, 4H Fast Charging. Gajularamaram, Hyderabad.',
   keywords: [
-    'EV Smith',
+    'EVSmith',
     'EV Rental Hyderabad',
     'Electric bike rental Hyderabad',
     'Electric scooter rental Gajularamaram Hyderabad',
@@ -37,25 +37,25 @@ export const metadata: Metadata = {
     'Electric scooter weekly rental',
     'Gajularamaram EV bike rental',
   ],
-  authors: [{ name: 'EV Smith' }],
-  creator: 'EV Smith Technologies',
-  publisher: 'EV Smith',
+  authors: [{ name: 'EVSmith' }],
+  creator: 'EVSmith Technologies',
+  publisher: 'EVSmith',
   metadataBase: new URL('https://evsmith.in'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'EV Smith | Premium Electric Bike Rentals in Hyderabad',
+    title: 'EVSmith | Premium Electric Bike Rentals in Hyderabad',
     description:
       'Ride Electric. Ride Smart. Premium EV Scooter Rentals in Hyderabad. Zero Maintenance, High Battery Range.',
     url: 'https://evsmith.in',
-    siteName: 'EV Smith Electric Bike Rentals',
+    siteName: 'EVSmith Electric Bike Rentals',
     images: [
       {
         url: '/assets/logo_transparent.png',
         width: 640,
         height: 640,
-        alt: 'EV Smith Logo',
+        alt: 'EVSmith Logo',
       },
       {
         url: '/assets/scooter_mint.png',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EV Smith | Premium Electric Bike Rentals in Hyderabad',
+    title: 'EVSmith | Premium Electric Bike Rentals in Hyderabad',
     description:
       'Ride Electric. Ride Smart. Top Speed 65 km/h, 100 km Range. Rent for Daily Commute or Delivery in Hyderabad.',
     images: ['/assets/scooter_mint.png'],
@@ -92,7 +92,7 @@ export default function RootLayout({
   const jsonLdLocalBusiness = {
     '@context': 'https://schema.org',
     '@type': 'AutomotiveBusiness',
-    name: 'EV Smith Electric Bike Rentals',
+    name: 'EVSmith Electric Bike Rentals',
     image: 'https://evsmith.in/assets/logo_transparent.png',
     '@id': 'https://evsmith.in',
     url: 'https://evsmith.in',
@@ -131,13 +131,13 @@ export default function RootLayout({
   const jsonLdProduct = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'EV Smith Electric Scooter Rental',
+    name: 'EVSmith Electric Scooter Rental',
     image: 'https://evsmith.in/assets/scooter_mint.png',
     description:
       'High-performance electric scooter with 100 KM range, 65 km/h top speed, and 4-hour fast charging available for weekly and monthly rental in Hyderabad.',
     brand: {
       '@type': 'Brand',
-      name: 'EV Smith',
+      name: 'EVSmith',
     },
     offers: {
       '@type': 'AggregateOffer',

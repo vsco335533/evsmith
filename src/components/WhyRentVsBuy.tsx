@@ -24,7 +24,7 @@ export default function WhyRentVsBuy() {
     {
       feature: 'Vehicle Insurance & Tax',
       buying: 'Annual renewal insurance fees',
-      renting: 'Fully Insured by EV Smith',
+      renting: 'Fully Insured by EVSmith',
     },
     {
       feature: 'Battery Aging & Replacement',
@@ -54,7 +54,7 @@ export default function WhyRentVsBuy() {
             Why Rent Instead of <span className="text-gradient-electric">Buying?</span>
           </h2>
           <p className="text-base sm:text-xl theme-text-muted font-medium">
-            See why renting with EV Smith is 3x cheaper and 100% hassle-free compared to purchasing an EV bike outright.
+            See why renting with EVSmith is 3x cheaper and 100% hassle-free compared to purchasing an EV bike outright.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function WhyRentVsBuy() {
                   <th className="p-6 text-sm font-black text-[#38d430] w-1/3 bg-[#38d430]/15 border-l border-[#38d430]/30">
                     <div className="flex items-center gap-2">
                       <Zap className="w-5 h-5 fill-current text-[#38d430]" />
-                      Renting with EV Smith
+                      Renting with EVSmith
                     </div>
                   </th>
                 </tr>

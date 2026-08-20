@@ -217,7 +217,7 @@ export default function TrustedPartners() {
             Powering <span className="text-gradient-electric">All Delivery</span> Partners
           </h2>
           <p className="text-base sm:text-lg text-[var(--text-muted)] font-semibold max-w-2xl mx-auto">
-            Hyderabad&apos;s top delivery executives across every major platform choose EV Smith.
+            Hyderabad&apos;s top delivery executives across every major platform choose EVSmith.
           </p>
         </motion.div>
 

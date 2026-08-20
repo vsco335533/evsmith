@@ -121,7 +121,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
               </a>
 
               <a
-                href="https://wa.me/918275753239?text=Hi%20EV%20Smith,%20I%20want%20to%20rent%20an%20electric%20scooter!"
+                href="https://wa.me/918275753239?text=Hi%20EVSmith,%20I%20want%20to%20rent%20an%20electric%20scooter!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md"
@@ -150,7 +150,7 @@ export default function ContactSection({ onOpenBooking }: ContactProps) {
 
             <div className="w-full h-full min-h-[380px] relative">
               <iframe
-                title="EV Smith Location Map"
+                title="EVSmith Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15219.791559868735!2d78.4024346!3d17.5255479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c53e02bb2b%3A0x6bd6c74fb9aa827b!2sGajularamaram%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"

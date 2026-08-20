@@ -51,7 +51,7 @@ export default function FAQAccordion() {
             Got <span className="text-gradient-electric">Questions?</span> We Have Answers.
           </h2>
           <p className="text-base sm:text-lg theme-text-muted font-medium">
-            Everything you need to know about renting EV Smith bikes in Hyderabad.
+            Everything you need to know about renting EVSmith bikes in Hyderabad.
           </p>
         </div>
 
