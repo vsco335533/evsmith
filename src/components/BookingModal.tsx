@@ -118,7 +118,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Name Input */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Full Name:
+                      Full Name <span className="text-red-400">*</span>:
                     </label>
                     <input
                       type="text"
@@ -133,7 +133,7 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Phone Input */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Phone / WhatsApp Number:
+                      Phone / WhatsApp Number <span className="text-red-400">*</span>:
                     </label>
                     <input
                       type="tel"
@@ -148,9 +148,10 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Delivery Service / Company Dropdown */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Delivery Service / Company:
+                      Delivery Service / Company <span className="text-red-400">*</span>:
                     </label>
                     <select
+                      required
                       value={deliveryService}
                       onChange={(e) => setDeliveryService(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none font-medium"
@@ -180,10 +181,11 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Work Location Input */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Work Location / Delivery Area:
+                      Work Location / Delivery Area <span className="text-red-400">*</span>:
                     </label>
                     <input
                       type="text"
+                      required
                       placeholder="e.g. Kukatpally, HITEC City, Kondapur"
                       value={workLocation}
                       onChange={(e) => setWorkLocation(e.target.value)}
@@ -194,9 +196,10 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   {/* Preferred EV Type Dropdown */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                      Preferred EV Type:
+                      Preferred EV Type <span className="text-red-400">*</span>:
                     </label>
                     <select
+                      required
                       value={preferredEvType}
                       onChange={(e) => setPreferredEvType(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 focus:border-[#38d430] text-sm text-white outline-none font-medium"
@@ -214,9 +217,10 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                        Primary ID Proof:
+                        Primary ID Proof <span className="text-red-400">*</span>:
                       </label>
                       <select
+                        required
                         value={docType}
                         onChange={(e) => setDocType(e.target.value)}
                         className="w-full px-3 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 text-sm text-white outline-none"
@@ -229,10 +233,11 @@ export default function BookingModal({ isOpen, selectedPlanId = 'monthly', onClo
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                        Pickup Date:
+                        Pickup Date <span className="text-red-400">*</span>:
                       </label>
                       <input
                         type="date"
+                        required
                         value={pickupDate}
                         onChange={(e) => setPickupDate(e.target.value)}
                         className="w-full px-3 py-3 rounded-xl bg-[#0d1e38] border border-slate-700 text-sm text-white outline-none"
